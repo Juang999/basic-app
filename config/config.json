@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "BangkitJuangRaharjo",
+    "password": "Juang411",
+    "database": "basic_app",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
