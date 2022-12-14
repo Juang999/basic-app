@@ -1,5 +1,6 @@
 const controller = {
-    StoreController: require('./StoreController')
+    StoreController: require('./StoreController'),
+    UserController: require('./UserController')
 }
 
 module.exports = controller
