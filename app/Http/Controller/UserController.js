@@ -60,7 +60,11 @@ const userController = {
             attributes: ['email', 'password']
         })
 
-        const verify = await argon2.verify(userAccount[0].password, req.body.password)
+        const verify = null
+
+        userAccount.map(async auth => {
+            verify = await argon2.verify(auth.password, req.body.password)
+        })
         
         if (userAccount == null && verify == false) {
             res.status(400)
