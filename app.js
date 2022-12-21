@@ -44,13 +44,6 @@ app.use(function(err, req, res, next) {
 });
 
 app.listen(port, () => {
-  // Goods.sync().then(result => {
-  //   console.log('the table has sync')
-  //   console.log(result)
-  // }).catch(err => {
-  //   console.log('the table has not sync')
-  //   console.log(err)
-  // })
   console.log(`site:[${host}:${port}]`)
 })
 

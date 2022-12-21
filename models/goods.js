@@ -23,7 +23,5 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false
   });
 
-  Goods.sync()
-
   return Goods;
 };

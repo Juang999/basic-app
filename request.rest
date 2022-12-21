@@ -41,3 +41,13 @@ Content-Type: application/json
     "password": "juang123",
     "phone": "08123456789"
 }
+
+###
+
+POST http://localhost:3000/api/login
+Content-Type: application/json
+
+{
+    "email": "juangraharjo007@gmail.com",
+    "password": "juang123"
+}

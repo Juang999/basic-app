@@ -24,7 +24,5 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false
   });
 
-  House.sync()
-
   return House;
 };
