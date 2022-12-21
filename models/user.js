@@ -1,33 +1,43 @@
-const { Sequelize, DataTypes, Model } = require('sequelize')
-const sequelize = new Sequelize('mysql::memory:')
+'use strict';
 
-class User extends Model {}
-
-User.init({
-    id: {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true
-    },
-    name: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class User extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
+    }
+  }
+  User.init({
+    name: DataTypes.STRING,
     username: {
-        type: DataTypes.STRING,
-        allowNull: false
+      type: DataTypes.STRING,
+      unique: true,
+      allowNull: false
     },
     email: {
-        type: DataTypes.STRING,
-        allowNull: true
+      type: DataTypes.STRING,
+      unique: true,
+      allowNull: false
     },
     password: {
-        type: DataTypes.STRING,
-        allowNull: false
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    phone: {
+      type: DataTypes.STRING,
+      unique: true,
+      allowNull: false
     }
-}, {
+  }, {
     sequelize,
-    modelName: 'User'
-})
-
-module.exports = User;
+    modelName: 'User',
+  });
+  return User;
+};

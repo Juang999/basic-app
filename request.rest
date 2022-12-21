@@ -1,0 +1,43 @@
+GET http://localhost:3000/api/car
+
+###
+
+POST http://localhost:3000/api/car
+Content-Type: application/json
+
+{
+    "name": "Ferrari",
+    "mount": 7
+}
+
+###
+
+GET http://localhost:3000/api/house
+
+###
+
+
+POST http://localhost:3000/api/house
+Content-Type: application/json
+
+{
+    "location": "Bandung",
+    "name": "griya alam",
+    "price": 1000000
+}
+
+###
+GET http://localhost:3000/api/user
+
+###
+
+POST http://localhost:3000/api/register
+Content-Type: application/json
+
+{
+    "name": "Bangkit Juang Raharjo",
+    "username": "Juang",
+    "email": "juangraharjo03@gmail.com",
+    "password": "juang123",
+    "phone": "08123456789"
+}

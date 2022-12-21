@@ -14,7 +14,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Store.init({
-    name: DataTypes.STRING,
+    name: {
+      type: DataTypes.STRING,
+      set(value) {
+        this.setDataValue('name', value.toUpperCase())
+      }
+    },
     address: DataTypes.STRING,
     email: DataTypes.STRING,
     phone: DataTypes.INTEGER

@@ -11,4 +11,20 @@ router.route('/store/:id')
     .put(controller.StoreController.update)
     .delete(controller.StoreController.delete)
 
+router.route('/goods')
+    .get(controller.GoodsController.index)
+
+router.route('/car')
+    .get(controller.CarsController.index)
+    .post(controller.CarsController.store)
+
+router.route('/house')
+    .get(controller.HouseController.index)
+    .post(controller.HouseController.store)
+
+router.route('/user')
+    .get(controller.UserController.index)
+
+router.post('/register', controller.UserController.register)
+
 module.exports = router;
