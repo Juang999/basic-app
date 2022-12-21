@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const controller = require('../app/Http/Controller/controllers')
+const middleware = require('../app/Http/Middleware/middleware')
 
 router.route('/store')
     .get(controller.StoreController.index)
@@ -15,7 +16,7 @@ router.route('/goods')
     .get(controller.GoodsController.index)
 
 router.route('/car')
-    .get(controller.CarsController.index)
+    .get([middleware.auth], controller.CarsController.index)
     .post(controller.CarsController.store)
 
 router.route('/house')

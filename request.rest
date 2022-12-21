@@ -49,5 +49,9 @@ Content-Type: application/json
 
 {
     "email": "juangraharjo007@gmail.com",
-    "password": "juang12"
+    "password": "juang123"
 }
+
+###
+GET http://localhost:3000/api/car
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1YW5ncmFoYXJqbzAwN0BnbWFpbC5jb20iLCJwYXNzd29yZCI6IiRhcmdvbjJpZCR2PTE5JG09NjU1MzYsdD0zLHA9NCQ3L0NWSHpxWWRxUHB1dklaaFZhbTBRJG1XazBsSjFVRytiTitpZ2lWV3pyZjd4L3AycU5reXlUb3dTc0lwZ05MZm8iLCJpYXQiOjE2NzE2MzU1MzksImV4cCI6MTY3MjI0MDMzOX0.V3kxQmoTY5pf9R10QGj2YsURKtZftrMHW4x5-ZD6SRw

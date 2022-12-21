@@ -68,6 +68,8 @@ const userController = {
                     status: 'failed',
                     message: 'your email or password is incorrect'
                 })
+
+            return;
         }
 
         const user = {email: result.email, password: result.password}
