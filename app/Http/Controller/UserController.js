@@ -53,20 +53,16 @@ const userController = {
         })
     },
     login: async (req, res) => {
-        const userAccount = await User.findAll({
+        User.findOne({
             where: {
                 email: req.body.email
             },
             attributes: ['email', 'password']
         })
+        .then(async result => {
+            const verify = await argon2.verify(result.password, req.body.password)
 
-        const verify = null
-
-        userAccount.map(async auth => {
-            verify = await argon2.verify(auth.password, req.body.password)
-        })
-        
-        if (userAccount == null && verify == false) {
+        if (verify == false) {
             res.status(400)
                 .json({
                     status: 'failed',
@@ -74,14 +70,22 @@ const userController = {
                 })
         }
 
-        const user = {email: userAccount[0].email, password: userAccount[0].password}
+        const user = {email: result.email, password: result.password}
 
         const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {expiresIn: "7 days"})
 
-        res.status(200)
-            .json({
-                token: accessToken
-            })
+            res.status(200)
+                .json({
+                    token: accessToken
+                })
+        })
+        .catch(err => {
+            res.status(403)
+                .json({
+                    status: 'failed',
+                    message: 'your email or password is incorrect'
+                })
+        })
     }
 }
 
