@@ -1,7 +1,15 @@
 const { Car } = require('../../../models')
+const authTools = require('../../../tools/auth')
 
 const carsController = {
-    index: (req, res) => {
+    index: async (req, res) => {
+        var auth;
+        authTools(req).then(result => {
+            auth = result;
+            console.log(auth)
+        })
+
+        
         Car.findAll()
             .then(result => {
                 res.status(200)

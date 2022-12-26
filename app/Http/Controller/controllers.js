@@ -3,7 +3,8 @@ const controller = {
     GoodsController: require('./GoodsController'),
     CarsController: require('./CarController'),
     HouseController: require('./HouseController'),
-    UserController: require('./UserController')
+    UserController: require('./UserController'),
+    BookController: require('./BookController')
 }
 
 module.exports = controller

@@ -23,11 +23,18 @@ router.route('/house')
     .get(controller.HouseController.index)
     .post(controller.HouseController.store)
 
+// router for user
 router.route('/user')
     .get(controller.UserController.index)
 
 router.post('/register', controller.UserController.register)
 
 router.post('/login', controller.UserController.login)
+
+router.get('/profile', [middleware.auth], controller.UserController.profile)
+
+router.route('/book')
+    .get([middleware.auth], controller.BookController.index)
+    .post([middleware.auth], controller.BookController.store)
 
 module.exports = router;
